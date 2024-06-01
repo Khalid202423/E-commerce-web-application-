@@ -1,0 +1,32 @@
+#include <iostream>
+
+int main() {
+    int totalItems = 0;
+    double totalPrice = 0.0;
+    char choice;
+
+    while (true) {
+        std::cout << "Do you want to add an item? (Y/N): ";
+        std::cin >> choice;
+
+        if (choice == 'Y' || choice == 'y') {
+            int quantity;
+            double price;
+
+            std::cout << "Enter quantity and price of the item: ";
+            std::cin >> quantity >> price;
+
+            totalItems += quantity;
+            totalPrice += quantity * price;
+        } else if (choice == 'N' || choice == 'n') {
+            break;
+        } else {
+            std::cout << "Invalid choice! Please enter Y or N." << std::endl;
+        }
+    }
+
+    std::cout << "Total items: " << totalItems << std::endl;
+    std::cout << "Total price: $" << totalPrice << std::endl;
+
+    return 0;
+}
